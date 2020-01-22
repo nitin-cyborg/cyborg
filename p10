@@ -1,0 +1,36 @@
+class Time:
+    def printTime(self,time):
+        print("the bread will be done by the bread maker at:\n",str(time.hours),":",str(time.minutes),":",str(time.seconds))
+def addTime(t1,t2):
+    sum=Time()
+    sum.hours=int(t1.hours)+t2.hours
+    sum.minutes=int(t1.minutes)+t2.minutes
+    sum.seconds=int(t1.seconds)+t2.seconds
+    if sum.seconds>=60:
+        sum.seconds=sum.seconds-60
+        sum.minutes=sum.minutes+1
+    if sum.minutes>=60:
+        sum.minutes=sum.minutes-60
+        sum.hours=sum.hours+1
+    return sum
+from datetime import datetime
+now=datetime.now()
+currentTime=Time()
+current_time=now.strftime("%H:%M:%S")
+print("current time is=",current_time)
+currentTime.hours=now.strftime("%H")
+currentTime.minutes=now.strftime("%m")
+currentTime.seconds=now.strftime("%S")
+breadTime=Time()
+breadTime.hours=3
+breadTime.minutes=35
+breadTime.seconds=40
+print("time required to do bread is=",breadTime.hours,":",breadTime.minutes,":",breadTime.seconds)
+doneTime=addTime(currentTime,breadTime)
+doneTime.printTime(doneTime)
+breadTime=Time()
+print("enter the amount of time taken by bread maker to make bread")
+breadTime.hours=int(input("enter hours"))
+breadTime.minutes=int(input("enter minutes"))
+breadTime.seconds=int(input("enter seconds"))
+print("time required to do bread is=",breadTime.hours,":",breadTime.minutes,":",breadTime.seconds)
