@@ -1,0 +1,26 @@
+n=int(input("Enter number of elements:"))
+print("Enter" ,n, "numbers")
+Sumnegv = Sumposv = 0
+num = []
+for i in range (0,n):
+      num.append(int(input()))
+for i in num:
+        if(i<0):
+             Sumnegv += i
+        else:
+             Sumposv += i
+print("Sum of Positive numbers is ",Sumposv)
+print("Sum of Negative numbers is ",Sumnegv)
+
+
+
+dict={'vowels':0,'letters':0,'pervowels':0}
+word=input("Enter a word")
+for x in word:
+   dict['letters']+=1
+   if x in 'aeiou' or x in 'AEIOU':
+      dict['vowels']+=1
+dict['pervowels']=(dict['vowels']*100//dict['letters'])
+print("The number of Vowels=",dict['vowels'])
+print("The number of Letters=",dict['letters'])
+print("Percentage of Vowels=",dict['pervowels'])
