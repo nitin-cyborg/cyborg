@@ -1,0 +1,44 @@
+n=int(input("Enter number of elements:"))
+print("Enter ",n," numbers")
+num = []
+for i in range(0,n):
+     num.append(int(input()))
+Sitem=int(input("Enter the Search item:"))
+found=False
+for i in range(0,n):
+     if(num[i]==Sitem):
+            found=True
+            break
+if(found == True):
+     print("Element found at",i+1)
+else:
+     print("Element not found")
+     
+     
+     
+     
+     n=int(input("Enter the size of the array:"))
+print("Enter the ordered list of elements:")
+li=[]
+flag=0
+for i in range(n):
+    x=int(input("\n"))
+    li.append(x)
+    li.sort()
+print("The array elements are ",li)
+item=int(input("Enter the element to be search "))
+low=0
+high=n-1
+while(low<=high):
+    mid=(low+high)//2
+    if(item==li[mid]):
+        flag=1
+        break
+    elif(item<li[mid]):
+        high=mid-1
+    else:
+        low=mid+1
+if(flag==1):
+    print("Search is successful and found at ",mid+1)
+else:
+     print("Search is unsuccessful")
