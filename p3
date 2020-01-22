@@ -1,0 +1,40 @@
+def recur_fibo(n):
+    if n<=1:
+        return n
+    else:
+        return(recur_fibo(n-1)+recur_fibo(n-2))
+nterms = int(input("How many terms?"))
+if nterms<=0:
+    print("Please enter a positive integer")
+else:
+    print("Fibonacci sequence:")
+    for i in range(nterms):
+        print(recur_fibo(i))
+    
+    
+    
+    
+    class Person:
+    name=""
+    age=0
+    def __init__(self,personName,personAge):
+        self.name=personName
+        self.age=personAge
+    def showName(self):
+        return self.name
+    def showAge(self):
+        return self.age
+class Student(Person):
+    studentId=""
+    def __init__(self,studentName,studentAge,studentId):
+        Person.__init__(self,studentName,studentAge)
+        self.studentId=studentId
+    def getId(self):
+            return self.studentId
+Person1=Person("Goutham",24)
+print("Person Details\n")
+print("Person Name:",Person1.showName(),"\nPerson Age:",Person1.showAge(),"\n")
+std1=Student("Kushal",22,108)
+print("Student details\n")
+print("Student name:",std1.showName(),"\nStudent age:",std1.showAge(),"\n Student id:",std1.getId())
+        
